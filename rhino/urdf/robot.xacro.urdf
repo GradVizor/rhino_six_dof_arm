@@ -1,0 +1,257 @@
+<?xml version="1.0" ?>
+<robot name="rhino" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find rhino)/urdf/ros2_control.xacro" />
+  <xacro:include filename="$(find rhino)/urdf/robot.trans" />
+  <xacro:include filename="$(find rhino)/urdf/robot.gazebo" />
+
+  <material name="Yellow">
+    <color rgba="1 1 0 1"/> 
+  </material>
+  <material name="Black">
+    <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+
+  <link name="world"/>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="1.4561718222937472e-14 1.007034455251554e-17 0.01004348145239828" rpy="0 0 0"/>
+      <mass value="3.2287311937365817"/>
+      <inertia ixx="0.006142115448044902" iyy="0.006142115447754821" izz="0.012066186559831868" ixy="-2.6011548470701015e-18" iyz="3.26558130767115e-19" ixz="2.369462837125797e-18"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Black"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1">
+    <inertial>
+      <origin xyz="-0.00019899101487736104 0.0 0.07985780670622619" rpy="0 0 0"/>
+      <mass value="1.0844115023306808"/>
+      <inertia ixx="0.002193592052919831" iyy="0.002197042825748048" izz="0.00016364634802497455" ixy="-2.245315045001917e-16" iyz="1.836042429204099e-15" ixz="1.4055834137000378e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 -0.0 -0.025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Yellow"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 -0.0 -0.025" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link2">
+    <inertial>
+      <origin xyz="-0.01975901863926532 7.176481631177012e-15 0.11499999999999982" rpy="0 0 0"/>
+      <mass value="1.7909115023306803"/>
+      <inertia ixx="0.009659068943400684" iyy="0.009665952367199027" izz="0.00027305399895490023" ixy="-2.0688824975298267e-16" iyz="2.1659605152939336e-18" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.02 -0.0 -0.169995" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Black"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0.02 -0.0 -0.169995" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link3">
+    <inertial>
+      <origin xyz="0.019801008985122832 3.552713678800501e-17 0.06513719329377377" rpy="0 0 0"/>
+      <mass value="1.0844115023306804"/>
+      <inertia ixx="0.002193592052929849" iyy="0.002197042825807821" izz="0.0001636463480346437" ixy="2.632484172641585e-16" iyz="9.132035465779633e-16" ixz="-1.405583413699823e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.02 0.0 -0.399995" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Yellow"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0.02 0.0 -0.399995" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link4">
+    <inertial>
+      <origin xyz="-1.7774670624248756e-14 -3.9968028886505634e-17 0.03036984704223289" rpy="0 0 0"/>
+      <mass value="0.3627498825747104"/>
+      <inertia ixx="0.0001334926762944777" iyy="0.00012837610187425852" izz="5.498209237391845e-05" ixy="-4.836131495267156e-17" iyz="-1.7055447087947966e-19" ixz="-1.711015644877422e-16"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 -0.0 -0.54499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Black"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 -0.0 -0.54499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link5">
+    <inertial>
+      <origin xyz="1.922018100231071e-14 -0.0025000000000000443 0.02415285334526429" rpy="0 0 0"/>
+      <mass value="0.16763744128735503"/>
+      <inertia ixx="3.636885280183799e-05" iyy="4.324340311050168e-05" izz="1.636846951695219e-05" ixy="8.881784196986944e-20" iyz="-3.515071461245108e-20" ixz="-3.441818080857435e-17"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 -0.0025 -0.59499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Yellow"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 -0.0025 -0.59499" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link6a">
+    <inertial>
+      <origin xyz="0.042591963231282365 -0.012500000000000067 0.004923464146475709" rpy="0 0 0"/>
+      <mass value="0.06361014975418272"/>
+      <inertia ixx="1.330070565689137e-05" iyy="1.935368905694318e-05" izz="2.9554000777043572e-05" ixy="-6.843405230743754e-20" iyz="4.337401069289531e-18" ixz="-3.6220617270069696e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.005 -0.0125 -0.62999" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link6a.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Black"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.005 -0.0125 -0.62999" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link6a.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link6b">
+    <inertial>
+      <origin xyz="-0.042591963231282365 0.01249999999999996 0.00492346414647582" rpy="0 0 0"/>
+      <mass value="0.06361014975418278"/>
+      <inertia ixx="1.3300705656884432e-05" iyy="1.935368905693971e-05" izz="2.95540007770433e-05" ixy="-1.2230273797544885e-20" iyz="-4.348110604092076e-18" ixz="3.6220617270067527e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.005 0.0125 -0.62999" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link6b.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="Black"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0.005 0.0125 -0.62999" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find rhino)/meshes/link6b.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.025" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.142" upper="3.142" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint2" type="revolute">
+    <origin xyz="-0.02 0.0 0.144995" rpy="0 0 0"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit lower="-2.565" upper="2.565" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint3" type="revolute">
+    <origin xyz="0.0 -0.0 0.23" rpy="0 0 0"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit lower="-2.975" upper="2.975" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint4" type="revolute">
+    <origin xyz="0.02 0.0 0.144995" rpy="0 0 0"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <axis xyz="-0.0 -0.0 1.0"/>
+    <limit lower="-3.142" upper="3.142" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.0 0.0025 0.05" rpy="0 0 0"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+    <limit lower="-1.545" upper="1.545" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint6a" type="revolute">
+    <origin xyz="-0.005 -0.015 0.035" rpy="0 0 0"/>
+    <parent link="link5"/>
+    <child link="link6b"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+    <limit lower="-1.300" upper="1.135" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <joint name="joint6b" type="revolute">
+    <origin xyz="0.005 0.01 0.035" rpy="0 0 0"/>
+    <parent link="link5"/>
+    <child link="link6a"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-1.300" upper="1.135" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <!-- Fixed Joint to World -->
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
+

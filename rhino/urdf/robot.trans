@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<robot name="rhino" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <transmission name="joint1_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint1_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint2_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <command_interface name="position"/>
+      <state_interface name="position"/>    
+    </joint>
+    <actuator name="joint2_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint3_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint3_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint4_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint4_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint5_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint5_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint6a_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6a">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint6a_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="joint6b_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6b">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <actuator name="joint6b_actr">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>
