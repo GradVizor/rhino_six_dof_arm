@@ -18,7 +18,7 @@ Rhino is a 6 degree of freedom robotic arm designed to perform tasks like painti
 
 3) Simulation environment is Gazebo Classic for testing algorithms. (currently developing the project for Gazebo Sim (fortress))
 
-4) Custom ros2_control hardware interfaces for precise motor control.
+4) Utilized joint_trajectory_controller in ros2_control for seamless joint control.
 
 
 # Directory Structure
