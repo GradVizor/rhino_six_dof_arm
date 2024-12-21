@@ -21,7 +21,7 @@ Rhino is a 6 degree of freedom robotic arm designed to perform tasks like painti
 4) Utilized joint_trajectory_controller in ros2_control for seamless joint control.
 
 
-# Directory Structure
+## Directory Structure
 
 ```
 rhino/
@@ -78,7 +78,7 @@ rhino/
 ```
 
 
-# Getting Started
+## Getting Started
 1) Clone the repository:- `git clone https://github.com/GradVizor/rhino_six_dof_arm.git` 
    
 2) Make sure to install required packages and dependencies by checking out rhino/package.xml.
