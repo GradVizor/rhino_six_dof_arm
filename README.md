@@ -91,8 +91,10 @@ rhino/
 
 5) This robotic arm utilizes ikpy library which is very easy to use and has to be installed before running any executable, do chech out the following github repo:- `https://github.com/Phylliade/ikpy.git`
 
-6) To launch the robot model in gazebo with ros2_controllers plugedin:- `ros2 launch rhino rhino_controller.launch.py`
+6) To launch the robot model in gazebo with ros2_controllers plugedin:-
 
-7) To check the joints and to test the urdf run this command to have a look on transforms in rviz2 :- `ros2 launch rhino display.launch.py`
+   `ros2 launch rhino rhino_controller.launch.py`
+
+8) To check the joints and to test the urdf run this command to have a look on transforms in rviz2 :- `ros2 launch rhino display.launch.py`
 
    
