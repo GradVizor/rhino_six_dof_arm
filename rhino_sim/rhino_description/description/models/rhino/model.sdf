@@ -1,0 +1,447 @@
+<sdf version='1.9'>
+  <model name='rhino'>
+    <joint name='world_to_base' type='fixed'>
+      <pose relative_to='__model__'>0 0 0 0 0 0</pose>
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint>
+    <link name='base_link'>
+      <pose relative_to='world_to_base'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>1.456171822293747e-14 1.007034455251554e-17 0.01004348145239828 0 0 0</pose>
+        <mass>3.2287311937365821</mass>
+        <inertia>
+          <ixx>0.0061421154480449016</ixx>
+          <ixy>-2.6011548470701011e-18</ixy>
+          <ixz>2.3694628371257971e-18</ixz>
+          <iyy>0.0061421154477548211</iyy>
+          <iyz>3.2655813076711502e-19</iyz>
+          <izz>0.01206618655983187</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient> <!-- Slightly lighter ambient -->
+          <diffuse>0.05 0.05 0.05 1</diffuse>       <!-- Keeps the object black -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Adds a shiny reflection -->
+          <emissive>0 0 0 0</emissive>     <!-- No self-emission -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint1' type='revolute'>
+      <pose relative_to='base_link'>0 0 0.025 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>link1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1419999999999999</lower>
+          <upper>3.1419999999999999</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link1'>
+      <pose relative_to='joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.000198991014877361 0 0.07985780670622619 0 0 0</pose>
+        <mass>1.0844115023306811</mass>
+        <inertia>
+          <ixx>0.0021935920529198311</ixx>
+          <ixy>-2.2453150450019168e-16</ixy>
+          <ixz>1.4055834137000379e-05</ixz>
+          <iyy>0.0021970428257480478</iyy>
+          <iyz>1.836042429204099e-15</iyz>
+          <izz>0.00016364634802497449</izz>
+        </inertia>
+      </inertial>
+      <collision name='link1_collision'>
+        <pose>0 0 -0.025 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link1_visual'>
+        <pose>0 0 -0.025 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0 1</ambient> <!-- Bright yellow ambient -->
+          <diffuse>1 1 0 1</diffuse>     <!-- Main yellow color -->
+          <specular>0.5 0.5 0 1</specular> <!-- Add a slight reflective shine -->
+          <emissive>0 0 0 0</emissive>   <!-- No glow -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint2' type='revolute'>
+      <pose relative_to='link1'>-0.02 0 0.144995 0 0 0</pose>
+      <parent>link1</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-2.5649999999999999</lower>
+          <upper>2.5649999999999999</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link2'>
+      <pose relative_to='joint2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.01975901863926532 7.176481631177012e-15 0.1149999999999998 0 0 0</pose>
+        <mass>1.7909115023306801</mass>
+        <inertia>
+          <ixx>0.0096590689434006838</ixx>
+          <ixy>-2.0688824975298269e-16</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0096659523671990266</iyy>
+          <iyz>2.165960515293934e-18</iyz>
+          <izz>0.00027305399895490018</izz>
+        </inertia>
+      </inertial>
+      <collision name='link2_collision'>
+        <pose>0.02 0 -0.169995 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link2_visual'>
+        <pose>0.02 0 -0.169995 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient> <!-- Slightly lighter ambient -->
+          <diffuse>0.05 0.05 0.05 1</diffuse>       <!-- Keeps the object black -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Adds a shiny reflection -->
+          <emissive>0 0 0 0</emissive>     <!-- No self-emission -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint3' type='revolute'>
+      <pose relative_to='link2'>0 0 0.23 0 0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.9750000000000001</lower>
+          <upper>2.9750000000000001</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link3'>
+      <pose relative_to='joint3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.01980100898512283 3.552713678800501e-17 0.06513719329377377 0 0 0</pose>
+        <mass>1.08441150233068</mass>
+        <inertia>
+          <ixx>0.0021935920529298492</ixx>
+          <ixy>2.6324841726415852e-16</ixy>
+          <ixz>-1.405583413699823e-05</ixz>
+          <iyy>0.0021970428258078212</iyy>
+          <iyz>9.1320354657796328e-16</iyz>
+          <izz>0.00016364634803464371</izz>
+        </inertia>
+      </inertial>
+      <collision name='link3_collision'>
+        <pose>0.02 0 -0.399995 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link3_visual'>
+        <pose>0.02 0 -0.399995 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0 1</ambient> <!-- Bright yellow ambient -->
+          <diffuse>1 1 0 1</diffuse>     <!-- Main yellow color -->
+          <specular>0.5 0.5 0 1</specular> <!-- Add a slight reflective shine -->
+          <emissive>0 0 0 0</emissive>   <!-- No glow -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint4' type='revolute'>
+      <pose relative_to='link3'>0.02 0 0.144995 0 0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1419999999999999</lower>
+          <upper>3.1419999999999999</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link4'>
+      <pose relative_to='joint4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-1.777467062424876e-14 -3.996802888650563e-17 0.03036984704223289 0 0 0</pose>
+        <mass>0.36274988257471041</mass>
+        <inertia>
+          <ixx>0.0001334926762944777</ixx>
+          <ixy>-4.8361314952671559e-17</ixy>
+          <ixz>-1.711015644877422e-16</ixz>
+          <iyy>0.00012837610187425849</iyy>
+          <iyz>-1.7055447087947969e-19</iyz>
+          <izz>5.4982092373918447e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link4_collision'>
+        <pose>0 0 -0.54499 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link4_visual'>
+        <pose>0 0 -0.54499 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient> <!-- Slightly lighter ambient -->
+          <diffuse>0.05 0.05 0.05 1</diffuse>       <!-- Keeps the object black -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Adds a shiny reflection -->
+          <emissive>0 0 0 0</emissive>     <!-- No self-emission -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint5' type='revolute'>
+      <pose relative_to='link4'>0 0.0025 0.05 0 0 0</pose>
+      <parent>link4</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5449999999999999</lower>
+          <upper>1.5449999999999999</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link5'>
+      <pose relative_to='joint5'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>1.922018100231071e-14 -0.002500000000000044 0.02415285334526429 0 0 0</pose>
+        <mass>0.167637441287355</mass>
+        <inertia>
+          <ixx>3.6368852801837992e-05</ixx>
+          <ixy>8.8817841969869443e-20</ixy>
+          <ixz>-3.4418180808574349e-17</ixz>
+          <iyy>4.3243403110501677e-05</iyy>
+          <iyz>-3.5150714612451079e-20</iyz>
+          <izz>1.636846951695219e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link5_collision'>
+        <pose>0 -0.0025 -0.59499 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link5_visual'>
+        <pose>0 -0.0025 -0.59499 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0 1</ambient> <!-- Bright yellow ambient -->
+          <diffuse>1 1 0 1</diffuse>     <!-- Main yellow color -->
+          <specular>0.5 0.5 0 1</specular> <!-- Add a slight reflective shine -->
+          <emissive>0 0 0 0</emissive>   <!-- No glow -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint6a' type='revolute'>
+      <pose relative_to='link5'>-0.005 -0.015 0.035 0 0 0</pose>
+      <parent>link5</parent>
+      <child>link6b</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.3</lower>
+          <upper>1.135</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link6b'>
+      <pose relative_to='joint6a'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.04259196323128236 0.01249999999999996 0.00492346414647582 0 0 0</pose>
+        <mass>0.063610149754182777</mass>
+        <inertia>
+          <ixx>1.330070565688443e-05</ixx>
+          <ixy>-1.223027379754489e-20</ixy>
+          <ixz>3.6220617270067532e-06</ixz>
+          <iyy>1.935368905693971e-05</iyy>
+          <iyz>-4.3481106040920756e-18</iyz>
+          <izz>2.9554000777043301e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link6b_collision'>
+        <pose>0.005 0.0125 -0.62999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link6b.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link6b_visual'>
+        <pose>0.005 0.0125 -0.62999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link6b.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient> <!-- Slightly lighter ambient -->
+          <diffuse>0.05 0.05 0.05 1</diffuse>       <!-- Keeps the object black -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Adds a shiny reflection -->
+          <emissive>0 0 0 0</emissive>     <!-- No self-emission -->
+        </material>
+      </visual>
+    </link>
+    <joint name='joint6b' type='revolute'>
+      <pose relative_to='link5'>0.005 0.01 0.035 0 0 0</pose>
+      <parent>link5</parent>
+      <child>link6a</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.3</lower>
+          <upper>1.135</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link6a'>
+      <pose relative_to='joint6b'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.04259196323128236 -0.01250000000000007 0.004923464146475709 0 0 0</pose>
+        <mass>0.063610149754182721</mass>
+        <inertia>
+          <ixx>1.3300705656891371e-05</ixx>
+          <ixy>-6.8434052307437538e-20</ixy>
+          <ixz>-3.62206172700697e-06</ixz>
+          <iyy>1.935368905694318e-05</iyy>
+          <iyz>4.3374010692895314e-18</iyz>
+          <izz>2.9554000777043569e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link6a_collision'>
+        <pose>-0.005 -0.0125 -0.62999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link6a.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link6a_visual'>
+        <pose>-0.005 -0.0125 -0.62999 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://rhino/meshes/link6a.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient> <!-- Slightly lighter ambient -->
+          <diffuse>0.05 0.05 0.05 1</diffuse>       <!-- Keeps the object black -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Adds a shiny reflection -->
+          <emissive>0 0 0 0</emissive>     <!-- No self-emission -->
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
