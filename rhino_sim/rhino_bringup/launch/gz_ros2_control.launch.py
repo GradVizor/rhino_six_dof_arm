@@ -19,12 +19,6 @@ def generate_launch_description():
 
     # ============= Launch Nodes ==============
     
-    rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(share_dir,
-                'launch',
-                'rsp.launch.py',)))
-    
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -71,7 +65,6 @@ def generate_launch_description():
             description='If true, use simulated clock')
     
     return LaunchDescription([
-        rsp,
         gazebo,
         sim_true,
         ros_gz_bridge,
