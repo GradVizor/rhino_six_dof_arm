@@ -61,6 +61,7 @@ rhino/
 |-- test/
 |
 |-- urdf/
+|   |-- camera.xacro
 |   |-- robot.gazebo
 |   |-- robot.trans
 |   |-- robot.xacro
