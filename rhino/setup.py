@@ -31,7 +31,8 @@ setup(
             "ikpy_testor = rhino.ikpy_testor:main",
             "task1 = rhino.task1:main",
             "feedback_test = rhino.feedback_test:main",
-            "task2 = rhino.task2:main"
+            "task2 = rhino.task2:main",
+            "color_detector = rhino.color_detector:main"
         ],
     },
 )

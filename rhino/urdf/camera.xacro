@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<robot name="rhino" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="camera_optical"></link>
+
+    <joint name="camera_optical_joint" type="fixed">
+        <origin xyz="0 0.0255 0" rpy="0 -1.5707 0"/>
+        <parent link="link5"/>
+        <child link="camera_optical"/>
+    </joint>
+
+    <gazebo reference="camera_optical">
+        <sensor name="camera" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <camera>
+                <horizontal_fov>1.089</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format> <!-- Normal RGB format -->
+                    <width>640</width>
+                    <height>480</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>100.0</far> <!-- Far clip plane increased -->
+                </clip>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>camera_optical</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+    
+
+</robot>

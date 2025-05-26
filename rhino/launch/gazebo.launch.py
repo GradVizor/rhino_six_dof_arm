@@ -12,7 +12,9 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     share_dir = get_package_share_directory('rhino')
+    world_path = os.path.join(share_dir, 'worlds', 'bowl_object')
 
+    
     xacro_file = os.path.join(share_dir, 'urdf', 'robot.xacro.urdf')
     robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()
@@ -41,9 +43,11 @@ def generate_launch_description():
             ])
         ]),
         launch_arguments={
-            'pause': 'true'
+            'pause': 'true',
+            'world': world_path
         }.items()
     )
+    
 
     gazebo_client = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([

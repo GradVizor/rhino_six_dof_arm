@@ -4,6 +4,7 @@
   <xacro:include filename="$(find rhino)/urdf/ros2_control.xacro" />
   <xacro:include filename="$(find rhino)/urdf/robot.trans" />
   <xacro:include filename="$(find rhino)/urdf/robot.gazebo" />
+  <xacro:include filename="$(find rhino)/urdf/camera.xacro" />
 
   <material name="Yellow">
     <color rgba="1 1 0 1"/> 
@@ -126,8 +127,8 @@
   <link name="link5">
     <inertial>
       <origin xyz="1.922018100231071e-14 -0.0025000000000000443 0.02415285334526429" rpy="0 0 0"/>
-      <mass value="0.16763744128735503"/>
-      <inertia ixx="3.636885280183799e-05" iyy="4.324340311050168e-05" izz="1.636846951695219e-05" ixy="8.881784196986944e-20" iyz="-3.515071461245108e-20" ixz="-3.441818080857435e-17"/>
+      <mass value="0.12333"/>
+      <inertia ixx="3.032e+05" iyy="3.214e+05" izz="18513.983" ixy="-1440.443" iyz="-5847.931" ixz="-74642.615"/>
     </inertial>
     <visual>
       <origin xyz="-0.0 -0.0025 -0.59499" rpy="0 0 0"/>
@@ -254,4 +255,3 @@
   </joint>
 
 </robot>
-
